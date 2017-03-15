@@ -7,7 +7,10 @@ var appRouter = function(app, currentDir) {
   });
 
   app.get('/account', function(req, res) {
-    return res.send('I will not work with get-request');
+    return res.send({
+        'status': 'error',
+        'message': 'I will not work with get-request',
+      });
   });
 
   app.post('/account', function(req, res) {

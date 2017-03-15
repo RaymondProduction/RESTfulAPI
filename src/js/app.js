@@ -1,4 +1,4 @@
-var colors = require('colors');
+require('colors');
 var ip = require('ip');
 var express = require('express');
 // парсер (разбор) для обработки входящих данных
@@ -38,7 +38,9 @@ app.use(bodyParser.urlencoded({
   extended: true,
 }));
 
-var routes = require('./routes/routes.js')(app, DirWithIndexHTML);
+
+var routes = require('./routes/routes.js');
+routes(app, DirWithIndexHTML);
 
 var server = app.listen(3000, function() {
   console.log('Start server'.green);
